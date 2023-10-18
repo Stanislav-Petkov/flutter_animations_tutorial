@@ -1,3 +1,7 @@
+Tutorial: https://www.youtube.com/watch?v=pv4NhV86ZKg&ab_channel=RivaanRanawat
+Note: To display the different examples from the folders, put their class name in the 
+main file like this: home: const BouncingBallAnimation()
+
 # animation_starter_code
 
 A new Flutter project.

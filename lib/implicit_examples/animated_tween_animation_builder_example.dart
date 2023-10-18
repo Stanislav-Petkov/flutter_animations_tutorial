@@ -11,20 +11,30 @@ class PulsatingCircleAnimation extends StatelessWidget {
         title: const Text('Pulsating Circle Animation'),
       ),
       body: Center(
-        child: Container(
-          width: size,
-          height: size,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.blue,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.blue.withOpacity(0.5),
-                blurRadius: size,
-                spreadRadius: size / 2,
+        child: TweenAnimationBuilder(
+          tween: Tween<double>(begin: 0, end: 200),
+          duration: const Duration(milliseconds: 1500),
+          builder: (context,size,widget) {
+            return Container(
+              width: size,
+              height: size,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.blue,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.blue.withOpacity(0.5),
+                    blurRadius: size,
+                    spreadRadius: size / 2,
+                  ),
+                ],
               ),
-            ],
-          ),
+              child: widget,
+            );
+          },
+          // The child is provided in the builder function and it is not
+          // create every time when the builder function is called
+          child: const Text('Hello World'),
         ),
       ),
     );
